@@ -1,0 +1,440 @@
+openapi: 3.0.1
+info:
+  title: Datasheets Backend
+  description: This is Datasheet backend API documentation. This is intended only
+    for development purposes
+  termsOfService: ""
+  contact:
+    email: kari.kolehmainen@vtt.fi
+  license:
+    name: Apache 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0.html
+  version: 1.0.1
+externalDocs:
+  description: Find out more
+  url: https://github.com/Advanced-Dataspaces-VTT/KITT4SME-Digital-Datasheets
+servers:
+  - url: "http://kitt4sme.collab-cloud.eu/datasheets-backend-rest/"
+    description: "Default HTTP Server URL"
+  - url: "https://kitt4sme.collab-cloud.eu/datasheets-backend-rest/"
+    description: "Default HTTPS Server URL"
+tags:
+  - name: datasheets
+    description: Datasheet operations
+    externalDocs:
+      description: Find out more
+      url: https://github.com/Advanced-Dataspaces-VTT/KITT4SME-Digital-Datasheets
+paths:
+  /datasheets:
+    get:
+      tags:
+      - datasheets
+      summary: Returns validated datasheets
+      description: Returns a list of datasheets that have been validated by market
+        place
+      operationId: "datasheetsGet"
+      parameters:
+      - name: validate
+        in: query
+        description: 1 or 0 if the datasheet is to be validated against the marketplace
+        required: true
+        schema:
+          type: integer
+          enum:
+            - 0
+            - 1
+      responses:
+        200:
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiResponse'
+components:
+  schemas:
+    ApiResponse:
+      type: object
+      required:
+        - data
+        - message
+        - status_code
+      properties:
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/Datasheet'
+        message:
+          type: string
+        status_code:
+          type: integer
+    Datasheet:
+      type: object
+      required:
+        - context
+        - datamodel
+        - information
+        - keycloak_id
+        - module_properties
+        - public_endpoints
+        - skills
+        - support
+        - technicalrequirements
+      properties:
+        context: 
+          $ref: '#/components/schemas/Context'
+        datamodel: 
+          $ref: '#/components/schemas/DataModel'
+        information: 
+          $ref: '#/components/schemas/Information'
+        keycloak_id: 
+          type: string
+        module_properties: 
+          $ref: '#/components/schemas/ModuleProperties'
+        public_endpoints: 
+          $ref: '#/components/schemas/PublicEndpoints'
+        skills: 
+          $ref: '#/components/schemas/Skills'
+        support: 
+          $ref: '#/components/schemas/Support'
+        technicalrequirements: 
+          $ref: '#/components/schemas/TechnicalRequirements'
+        datasheet_id: 
+          type: integer
+        hardware_dependencies:
+          type: array
+          items:
+            $ref: '#/components/schemas/HardwareDependency'
+        software_dependencies:
+          type: array
+          items:
+            $ref: '#/components/schemas/SoftwareDependency'
+    SoftwareDependency:
+      type: object
+      required:
+        - dependency_level
+        - module_link
+      properties:
+        dependency_level: 
+          type: string
+        module_link:
+          type: string
+        module_text: 
+          type: string
+        module_version: 
+          type: string
+        module_id: 
+          type: string
+    HardwareDependency:
+      type: object
+      required:
+        - dependency_level
+        - module_link
+      properties:
+        dependency_level: 
+          type: string
+        module_link:
+          type: string
+        device_text:
+          type: string
+    TechnicalRequirements:
+      type: object
+      required:
+        - disk_unit
+        - gpu_unit
+        - multienancy_support
+        - multiuser_support
+        - ram_unit
+      properties:
+        disk_unit: 
+          type: string
+        gpu_unit: 
+          type: string
+        multienancy_support: 
+          $ref: '#/components/schemas/MultienancySupport'
+        multiuser_support: 
+          $ref: '#/components/schemas/MultiuserSupport'
+        ram_unit: 
+          type: string
+        dashboard: 
+          type: string
+        os: 
+          type: array
+          items:
+            type: string
+        protocol: 
+          type: array
+          items:
+            $ref: '#/components/schemas/ProtocolItem'
+        requirement_cpu: 
+          type: string
+        requirement_disk:
+          type: string
+        requirement_gpu:
+          type: string
+        requirement_ram:
+          type: string
+    ProtocolItem:
+      type: object
+      required:
+        - name
+      properties:
+        name: 
+          type: string
+    MultiuserSupport:
+      type: object
+      required:
+        - checkbox
+      properties:
+        checkbox: 
+          type: boolean
+    MultienancySupport:
+      type: object
+      required:
+        - checkbox
+      properties:
+        checkbox: 
+          type: boolean
+    Support:
+      type: object
+      properties:
+        online_resources: 
+          type: string
+    Skills:
+      type: object
+      required:
+        - basic
+        - crossfunctional
+      properties:
+        basic: 
+          $ref: '#/components/schemas/Basic'
+        crossfunctional: 
+          $ref: '#/components/schemas/CrossFunctional'
+    CrossFunctional:
+      type: object
+      properties:
+        problemsolving: 
+          type: array
+          items:
+            type: string
+        social:
+          type: array
+          items:
+            type: string
+        system:
+          type: array
+          items:
+            type: string
+        technical:
+          type: array
+          items:
+            type: string
+    Basic:
+      type: object
+      properties:
+        process: 
+          type: array
+          items:
+            type: string
+    PublicEndpoints:
+      type: object
+      properties:
+        oapi:
+          type: boolean
+    ModuleProperties:
+      type: object
+      properties:
+        management: 
+          type: array
+          items:
+            $ref: '#/components/schemas/ModuleProperty'
+        quality: 
+          type: array
+          items:
+            $ref: '#/components/schemas/ModuleProperty'
+        operator: 
+          type: array
+          items:
+            $ref: '#/components/schemas/ModuleProperty'
+        performance: 
+          type: array
+          items:
+            $ref: '#/components/schemas/ModuleProperty'
+    ModuleProperty:
+      type: object
+      required:
+        - issue
+        - relevance
+      properties:
+        issue: 
+          type: string
+        relevance: 
+          type: string
+    Information:
+      type: object
+      required:
+        - component_accronym
+        - component_name
+        - component_uuid
+        - provider
+        - version
+      properties:
+        component_accronym: 
+          type: string
+        component_name:
+          type: string
+        component_uuid:
+          type: string
+        provider:
+          type: string
+        version:
+          type: string
+    DataModel:
+      type: object
+      required:
+        - datamodel_links
+        - input
+        - output
+      properties:
+        datamodel_links: 
+          type: object
+          additionalProperties:
+            type: object
+        input: 
+          $ref: '#/components/schemas/DataModels'
+        output:
+          $ref: '#/components/schemas/DataModels'
+    DataModels:
+      type: object
+      properties:
+        datamodel:
+          type: array
+          items:
+            type: string
+        devices:
+          type: array
+          items:
+            type: string
+        factory:
+          type: array
+          items:
+            type: string
+        measurements:
+          type: array
+          items:
+            type: string
+        workers:
+          type: array
+          items:
+            type: string
+    Context:
+      type: object
+      required:
+        - benefits
+        - category
+        - features
+        - productiveaxis
+        - usecase
+      properties:
+        benefits: 
+          $ref: '#/components/schemas/Benefits'
+        category: 
+          $ref: '#/components/schemas/Category'
+        features: 
+          $ref: '#/components/schemas/Features'
+        productiveaxis: 
+          $ref: '#/components/schemas/Productiveaxis'
+        usecase: 
+          $ref: '#/components/schemas/Usecase'
+        description: 
+          type: string
+        industry:
+          type: array
+          items:
+            type: string
+    Usecase:
+      type: object
+      properties:
+        usecasedesc: 
+          type: string
+    Productiveaxis:
+      type: object
+      required:
+        - ai_hri
+        - ai_manualactivity
+        - ai_quality
+      properties:
+        ai_hri: 
+          type: boolean
+        ai_manualactivity:
+          type: boolean
+        ai_quality:
+          type: boolean
+    Features:
+      type: object
+      properties:
+        operator:
+          type: array
+          items:
+            type: string
+        management:
+          type: array
+          items:
+            type: string
+        performance:
+          type: array
+          items:
+            type: string
+        quality:
+          type: array
+          items:
+            type: string
+    Category:
+      type: object
+      required:
+        - decisionmaker
+        - reasoning
+      properties:
+        decisionmaker: 
+          type: boolean
+        reasoning:
+          type: boolean
+    Benefits:
+      type: object
+      required:
+        - operator
+        - production
+        - quality
+      properties:
+        macmuhine: 
+          $ref: '#/components/schemas/Benefit2Fields'
+        operator: 
+          $ref: '#/components/schemas/Benefit3Fields'
+        production: 
+          $ref: '#/components/schemas/Benefit2Fields'
+        quality: 
+          $ref: '#/components/schemas/Benefit2Fields'
+        machine: 
+          $ref: '#/components/schemas/Benefit2Fields'
+    Benefit2Fields:
+      type: object
+      required:
+        - "1"
+        - "2"
+      properties:
+        "1":
+          type: boolean
+        "2":
+          type: boolean
+    Benefit3Fields:
+      type: object
+      required:
+        - "1"
+        - "2"
+        - "3"
+      properties:
+        "1":
+          type: boolean
+        "2":
+          type: boolean
+        "3":
+          type: boolean

@@ -37,9 +37,7 @@ class TestDataModels(unittest.TestCase):
         model = DataModels()  # noqa: E501
         if include_optional:
             return DataModels(
-                datamodel = [
-                    ''
-                    ],
+                datamodel = '',
                 devices = [
                     ''
                     ],

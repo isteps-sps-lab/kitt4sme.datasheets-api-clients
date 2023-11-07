@@ -26,7 +26,7 @@ class DataModels(BaseModel):
     """
     DataModels
     """
-    datamodel: Optional[conlist(StrictStr)] = None
+    datamodel: Optional[StrictStr] = None
     devices: Optional[conlist(StrictStr)] = None
     factory: Optional[conlist(StrictStr)] = None
     measurements: Optional[conlist(StrictStr)] = None

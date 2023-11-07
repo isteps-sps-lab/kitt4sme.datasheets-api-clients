@@ -4,7 +4,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**datamodel** | **List[str]** |  | [optional] 
+**datamodel** | **str** |  | [optional] 
 **devices** | **List[str]** |  | [optional] 
 **factory** | **List[str]** |  | [optional] 
 **measurements** | **List[str]** |  | [optional] 

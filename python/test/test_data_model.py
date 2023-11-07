@@ -41,9 +41,7 @@ class TestDataModel(unittest.TestCase):
                     'key' : None
                     },
                 input = datasheets_openapi_client.models.data_models.DataModels(
-                    datamodel = [
-                        ''
-                        ], 
+                    datamodel = '', 
                     devices = [
                         ''
                         ], 
@@ -57,9 +55,7 @@ class TestDataModel(unittest.TestCase):
                         ''
                         ], ),
                 output = datasheets_openapi_client.models.data_models.DataModels(
-                    datamodel = [
-                        ''
-                        ], 
+                    datamodel = '', 
                     devices = [
                         ''
                         ], 
@@ -79,9 +75,7 @@ class TestDataModel(unittest.TestCase):
                     'key' : None
                     },
                 input = datasheets_openapi_client.models.data_models.DataModels(
-                    datamodel = [
-                        ''
-                        ], 
+                    datamodel = '', 
                     devices = [
                         ''
                         ], 
@@ -95,9 +89,7 @@ class TestDataModel(unittest.TestCase):
                         ''
                         ], ),
                 output = datasheets_openapi_client.models.data_models.DataModels(
-                    datamodel = [
-                        ''
-                        ], 
+                    datamodel = '', 
                     devices = [
                         ''
                         ], 

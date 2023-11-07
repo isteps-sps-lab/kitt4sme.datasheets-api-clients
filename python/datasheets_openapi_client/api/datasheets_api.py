@@ -44,19 +44,19 @@ class DatasheetsApi:
             api_client = ApiClient.get_default()
         self.api_client = api_client
 
-    @validate_arguments
-    def datasheets_get(self, validate : Annotated[StrictInt, Field(..., description="1 or 0 if the datasheet is to be validated against the marketplace")], **kwargs) -> ApiResponse:  # noqa: E501
+    @validate_arguments(config={"allow_population_by_field_name": True})
+    def datasheets_get(self, validate_: Annotated[StrictInt, Field(..., description="1 or 0 if the datasheet is to be validated against the marketplace", alias='validate')], **kwargs) -> ApiResponse:  # noqa: E501
         """Returns validated datasheets  # noqa: E501
 
         Returns a list of datasheets that have been validated by market place  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.datasheets_get(validate, async_req=True)
+        >>> thread = api.datasheets_get(validate_, async_req=True)
         >>> result = thread.get()
 
-        :param validate: 1 or 0 if the datasheet is to be validated against the marketplace (required)
-        :type validate: int
+        :param validate_: 1 or 0 if the datasheet is to be validated against the marketplace (required)
+        :type validate_: int
         :param async_req: Whether to execute the request asynchronously.
         :type async_req: bool, optional
         :param _request_timeout: timeout setting for this request.
@@ -72,21 +72,21 @@ class DatasheetsApi:
         if '_preload_content' in kwargs:
             message = "Error! Please call the datasheets_get_with_http_info method with `_preload_content` instead and obtain raw data from ApiResponse.raw_data"  # noqa: E501
             raise ValueError(message)
-        return self.datasheets_get_with_http_info(validate, **kwargs)  # noqa: E501
+        return self.datasheets_get_with_http_info(validate_, **kwargs)  # noqa: E501
 
-    @validate_arguments
-    def datasheets_get_with_http_info(self, validate : Annotated[StrictInt, Field(..., description="1 or 0 if the datasheet is to be validated against the marketplace")], **kwargs) -> ApiResponse:  # noqa: E501
+    @validate_arguments(config={"allow_population_by_field_name": True})
+    def datasheets_get_with_http_info(self, validate_: Annotated[StrictInt, Field(..., description="1 or 0 if the datasheet is to be validated against the marketplace", alias='validate')], **kwargs) -> ApiResponse:  # noqa: E501
         """Returns validated datasheets  # noqa: E501
 
         Returns a list of datasheets that have been validated by market place  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.datasheets_get_with_http_info(validate, async_req=True)
+        >>> thread = api.datasheets_get_with_http_info(validate_, async_req=True)
         >>> result = thread.get()
 
-        :param validate: 1 or 0 if the datasheet is to be validated against the marketplace (required)
-        :type validate: int
+        :param validate_: 1 or 0 if the datasheet is to be validated against the marketplace (required)
+        :type validate_: int
         :param async_req: Whether to execute the request asynchronously.
         :type async_req: bool, optional
         :param _preload_content: if False, the ApiResponse.data will
@@ -115,7 +115,7 @@ class DatasheetsApi:
         _params = locals()
 
         _all_params = [
-            'validate'
+            'validate_'
         ]
         _all_params.extend(
             [
@@ -146,8 +146,8 @@ class DatasheetsApi:
 
         # process the query parameters
         _query_params = []
-        if _params.get('validate') is not None:  # noqa: E501
-            _query_params.append(('validate', _params['validate']))
+        if _params.get('validate_') is not None:  # noqa: E501
+            _query_params.append(('validate', _params['validate_']))
 
         # process the header parameters
         _header_params = dict(_params.get('_headers', {}))

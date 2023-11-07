@@ -307,9 +307,7 @@ components:
       type: object
       properties:
         datamodel:
-          type: array
-          items:
-            type: string
+          type: string
         devices:
           type: array
           items:

@@ -27,9 +27,9 @@ class HardwareDependency(BaseModel):
     HardwareDependency
     """
     dependency_level: StrictStr = Field(...)
-    module_link: StrictStr = Field(...)
+    device_link: StrictStr = Field(...)
     device_text: Optional[StrictStr] = None
-    __properties = ["dependency_level", "module_link", "device_text"]
+    __properties = ["dependency_level", "device_link", "device_text"]
 
     class Config:
         """Pydantic configuration"""
@@ -73,7 +73,7 @@ class HardwareDependency(BaseModel):
 
         _obj = HardwareDependency.parse_obj({
             "dependency_level": obj.get("dependency_level"),
-            "module_link": obj.get("module_link"),
+            "device_link": obj.get("device_link"),
             "device_text": obj.get("device_text")
         })
         return _obj

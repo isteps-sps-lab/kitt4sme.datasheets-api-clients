@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **dependency_level** | **str** |  | 
-**module_link** | **str** |  | 
+**device_link** | **str** |  | 
 **device_text** | **str** |  | [optional] 
 
 ## Example

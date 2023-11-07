@@ -159,7 +159,7 @@ class TestDatasheet(unittest.TestCase):
                 hardware_dependencies = [
                     datasheets_openapi_client.models.hardware_dependency.HardwareDependency(
                         dependency_level = '', 
-                        module_link = '', 
+                        device_link = '', 
                         device_text = '', )
                     ],
                 software_dependencies = [

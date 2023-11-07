@@ -38,13 +38,13 @@ class TestHardwareDependency(unittest.TestCase):
         if include_optional:
             return HardwareDependency(
                 dependency_level = '',
-                module_link = '',
+                device_link = '',
                 device_text = ''
             )
         else:
             return HardwareDependency(
                 dependency_level = '',
-                module_link = '',
+                device_link = '',
         )
         """
 

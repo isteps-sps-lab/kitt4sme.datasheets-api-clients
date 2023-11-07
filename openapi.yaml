@@ -65,6 +65,7 @@ components:
             $ref: '#/components/schemas/Datasheet'
         message:
           type: string
+          nullable: true
         status_code:
           type: integer
     Datasheet:

@@ -150,9 +150,9 @@ components:
         gpu_unit: 
           type: string
         multienancy_support: 
-          $ref: '#/components/schemas/MultienancySupport'
+          $ref: '#/components/schemas/RequirementSupport'
         multiuser_support: 
-          $ref: '#/components/schemas/MultiuserSupport'
+          $ref: '#/components/schemas/RequirementSupport'
         ram_unit: 
           type: string
         dashboard: 
@@ -180,14 +180,7 @@ components:
       properties:
         name: 
           type: string
-    MultiuserSupport:
-      type: object
-      required:
-        - checkbox
-      properties:
-        checkbox: 
-          type: boolean
-    MultienancySupport:
+    RequirementSupport:
       type: object
       required:
         - checkbox
@@ -296,9 +289,7 @@ components:
         - output
       properties:
         datamodel_links: 
-          type: object
-          additionalProperties:
-            type: object
+          $ref: '#/components/schemas/DatamodelLinks'
         input: 
           $ref: '#/components/schemas/DataModels'
         output:
@@ -324,6 +315,13 @@ components:
           type: array
           items:
             type: string
+    DatamodelLinks:
+      type: object
+      properties:
+        input:
+          type: string
+        output:
+          type: string
     Context:
       type: object
       required:
@@ -399,12 +397,11 @@ components:
     Benefits:
       type: object
       required:
+        - machine
         - operator
         - production
         - quality
       properties:
-        macmuhine: 
-          $ref: '#/components/schemas/Benefit2Fields'
         operator: 
           $ref: '#/components/schemas/Benefit3Fields'
         production: 

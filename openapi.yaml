@@ -128,11 +128,11 @@ components:
       type: object
       required:
         - dependency_level
-        - module_link
+        - device_link
       properties:
         dependency_level: 
           type: string
-        module_link:
+        device_link:
           type: string
         device_text:
           type: string

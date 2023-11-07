@@ -19,7 +19,7 @@ import re  # noqa: F401
 import json
 
 
-from typing import List
+from typing import List, Optional
 from pydantic import BaseModel, Field, StrictInt, StrictStr, conlist
 from datasheets_openapi_client.models.datasheet import Datasheet
 
@@ -28,7 +28,7 @@ class ApiResponse(BaseModel):
     ApiResponse
     """
     data: conlist(Datasheet) = Field(...)
-    message: StrictStr = Field(...)
+    message: Optional[StrictStr] = Field(...)
     status_code: StrictInt = Field(...)
     __properties = ["data", "message", "status_code"]
 
@@ -63,6 +63,11 @@ class ApiResponse(BaseModel):
                 if _item:
                     _items.append(_item.to_dict())
             _dict['data'] = _items
+        # set to None if message (nullable) is None
+        # and __fields_set__ contains the field
+        if self.message is None and "message" in self.__fields_set__:
+            _dict['message'] = None
+
         return _dict
 
     @classmethod

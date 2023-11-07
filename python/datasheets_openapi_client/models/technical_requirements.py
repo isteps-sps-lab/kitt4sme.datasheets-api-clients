@@ -21,9 +21,8 @@ import json
 
 from typing import List, Optional
 from pydantic import BaseModel, Field, StrictStr, conlist
-from datasheets_openapi_client.models.multienancy_support import MultienancySupport
-from datasheets_openapi_client.models.multiuser_support import MultiuserSupport
 from datasheets_openapi_client.models.protocol_item import ProtocolItem
+from datasheets_openapi_client.models.requirement_support import RequirementSupport
 
 class TechnicalRequirements(BaseModel):
     """
@@ -31,8 +30,8 @@ class TechnicalRequirements(BaseModel):
     """
     disk_unit: StrictStr = Field(...)
     gpu_unit: StrictStr = Field(...)
-    multienancy_support: MultienancySupport = Field(...)
-    multiuser_support: MultiuserSupport = Field(...)
+    multienancy_support: RequirementSupport = Field(...)
+    multiuser_support: RequirementSupport = Field(...)
     ram_unit: StrictStr = Field(...)
     dashboard: Optional[StrictStr] = None
     os: Optional[conlist(StrictStr)] = None
@@ -99,8 +98,8 @@ class TechnicalRequirements(BaseModel):
         _obj = TechnicalRequirements.parse_obj({
             "disk_unit": obj.get("disk_unit"),
             "gpu_unit": obj.get("gpu_unit"),
-            "multienancy_support": MultienancySupport.from_dict(obj.get("multienancy_support")) if obj.get("multienancy_support") is not None else None,
-            "multiuser_support": MultiuserSupport.from_dict(obj.get("multiuser_support")) if obj.get("multiuser_support") is not None else None,
+            "multienancy_support": RequirementSupport.from_dict(obj.get("multienancy_support")) if obj.get("multienancy_support") is not None else None,
+            "multiuser_support": RequirementSupport.from_dict(obj.get("multiuser_support")) if obj.get("multiuser_support") is not None else None,
             "ram_unit": obj.get("ram_unit"),
             "dashboard": obj.get("dashboard"),
             "os": obj.get("os"),

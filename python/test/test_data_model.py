@@ -37,9 +37,9 @@ class TestDataModel(unittest.TestCase):
         model = DataModel()  # noqa: E501
         if include_optional:
             return DataModel(
-                datamodel_links = {
-                    'key' : None
-                    },
+                datamodel_links = datasheets_openapi_client.models.datamodel_links.DatamodelLinks(
+                    input = '', 
+                    output = '', ),
                 input = datasheets_openapi_client.models.data_models.DataModels(
                     datamodel = '', 
                     devices = [
@@ -71,9 +71,9 @@ class TestDataModel(unittest.TestCase):
             )
         else:
             return DataModel(
-                datamodel_links = {
-                    'key' : None
-                    },
+                datamodel_links = datasheets_openapi_client.models.datamodel_links.DatamodelLinks(
+                    input = '', 
+                    output = '', ),
                 input = datasheets_openapi_client.models.data_models.DataModels(
                     datamodel = '', 
                     devices = [

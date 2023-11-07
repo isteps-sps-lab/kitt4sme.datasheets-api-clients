@@ -19,7 +19,7 @@ import re  # noqa: F401
 import json
 
 
-from typing import Optional
+
 from pydantic import BaseModel, Field
 from datasheets_openapi_client.models.benefit2_fields import Benefit2Fields
 from datasheets_openapi_client.models.benefit3_fields import Benefit3Fields
@@ -28,12 +28,11 @@ class Benefits(BaseModel):
     """
     Benefits
     """
-    macmuhine: Optional[Benefit2Fields] = None
     operator: Benefit3Fields = Field(...)
     production: Benefit2Fields = Field(...)
     quality: Benefit2Fields = Field(...)
-    machine: Optional[Benefit2Fields] = None
-    __properties = ["macmuhine", "operator", "production", "quality", "machine"]
+    machine: Benefit2Fields = Field(...)
+    __properties = ["operator", "production", "quality", "machine"]
 
     class Config:
         """Pydantic configuration"""
@@ -59,9 +58,6 @@ class Benefits(BaseModel):
                           exclude={
                           },
                           exclude_none=True)
-        # override the default output from pydantic by calling `to_dict()` of macmuhine
-        if self.macmuhine:
-            _dict['macmuhine'] = self.macmuhine.to_dict()
         # override the default output from pydantic by calling `to_dict()` of operator
         if self.operator:
             _dict['operator'] = self.operator.to_dict()
@@ -91,7 +87,6 @@ class Benefits(BaseModel):
                 raise ValueError("Error due to additional fields (not defined in Benefits) in the input: " + obj)
 
         _obj = Benefits.parse_obj({
-            "macmuhine": Benefit2Fields.from_dict(obj.get("macmuhine")) if obj.get("macmuhine") is not None else None,
             "operator": Benefit3Fields.from_dict(obj.get("operator")) if obj.get("operator") is not None else None,
             "production": Benefit2Fields.from_dict(obj.get("production")) if obj.get("production") is not None else None,
             "quality": Benefit2Fields.from_dict(obj.get("quality")) if obj.get("quality") is not None else None,

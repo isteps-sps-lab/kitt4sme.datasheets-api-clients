@@ -6,8 +6,8 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **disk_unit** | **str** |  | 
 **gpu_unit** | **str** |  | 
-**multienancy_support** | [**MultienancySupport**](MultienancySupport.md) |  | 
-**multiuser_support** | [**MultiuserSupport**](MultiuserSupport.md) |  | 
+**multienancy_support** | [**RequirementSupport**](RequirementSupport.md) |  | 
+**multiuser_support** | [**RequirementSupport**](RequirementSupport.md) |  | 
 **ram_unit** | **str** |  | 
 **dashboard** | **str** |  | [optional] 
 **os** | **List[str]** |  | [optional] 

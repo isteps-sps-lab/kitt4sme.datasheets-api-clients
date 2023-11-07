@@ -4,11 +4,10 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**macmuhine** | [**Benefit2Fields**](Benefit2Fields.md) |  | [optional] 
 **operator** | [**Benefit3Fields**](Benefit3Fields.md) |  | 
 **production** | [**Benefit2Fields**](Benefit2Fields.md) |  | 
 **quality** | [**Benefit2Fields**](Benefit2Fields.md) |  | 
-**machine** | [**Benefit2Fields**](Benefit2Fields.md) |  | [optional] 
+**machine** | [**Benefit2Fields**](Benefit2Fields.md) |  | 
 
 ## Example
 

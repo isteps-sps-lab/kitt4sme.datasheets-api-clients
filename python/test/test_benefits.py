@@ -37,9 +37,6 @@ class TestBenefits(unittest.TestCase):
         model = Benefits()  # noqa: E501
         if include_optional:
             return Benefits(
-                macmuhine = datasheets_openapi_client.models.benefit2_fields.Benefit2Fields(
-                    1 = True, 
-                    2 = True, ),
                 operator = datasheets_openapi_client.models.benefit3_fields.Benefit3Fields(
                     1 = True, 
                     2 = True, 
@@ -64,6 +61,9 @@ class TestBenefits(unittest.TestCase):
                     1 = True, 
                     2 = True, ),
                 quality = datasheets_openapi_client.models.benefit2_fields.Benefit2Fields(
+                    1 = True, 
+                    2 = True, ),
+                machine = datasheets_openapi_client.models.benefit2_fields.Benefit2Fields(
                     1 = True, 
                     2 = True, ),
         )

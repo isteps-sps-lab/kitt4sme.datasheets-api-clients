@@ -22,9 +22,9 @@ import json
 
 from pydantic import BaseModel, Field, StrictBool
 
-class MultiuserSupport(BaseModel):
+class RequirementSupport(BaseModel):
     """
-    MultiuserSupport
+    RequirementSupport
     """
     checkbox: StrictBool = Field(...)
     __properties = ["checkbox"]
@@ -43,8 +43,8 @@ class MultiuserSupport(BaseModel):
         return json.dumps(self.to_dict())
 
     @classmethod
-    def from_json(cls, json_str: str) -> MultiuserSupport:
-        """Create an instance of MultiuserSupport from a JSON string"""
+    def from_json(cls, json_str: str) -> RequirementSupport:
+        """Create an instance of RequirementSupport from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
     def to_dict(self):
@@ -56,20 +56,20 @@ class MultiuserSupport(BaseModel):
         return _dict
 
     @classmethod
-    def from_dict(cls, obj: dict) -> MultiuserSupport:
-        """Create an instance of MultiuserSupport from a dict"""
+    def from_dict(cls, obj: dict) -> RequirementSupport:
+        """Create an instance of RequirementSupport from a dict"""
         if obj is None:
             return None
 
         if not isinstance(obj, dict):
-            return MultiuserSupport.parse_obj(obj)
+            return RequirementSupport.parse_obj(obj)
 
         # raise errors for additional fields in the input
         for _key in obj.keys():
             if _key not in cls.__properties:
-                raise ValueError("Error due to additional fields (not defined in MultiuserSupport) in the input: " + obj)
+                raise ValueError("Error due to additional fields (not defined in RequirementSupport) in the input: " + obj)
 
-        _obj = MultiuserSupport.parse_obj({
+        _obj = RequirementSupport.parse_obj({
             "checkbox": obj.get("checkbox")
         })
         return _obj

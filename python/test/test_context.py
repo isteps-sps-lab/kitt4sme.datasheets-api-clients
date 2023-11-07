@@ -38,9 +38,6 @@ class TestContext(unittest.TestCase):
         if include_optional:
             return Context(
                 benefits = datasheets_openapi_client.models.benefits.Benefits(
-                    macmuhine = datasheets_openapi_client.models.benefit2_fields.Benefit2Fields(
-                        1 = True, 
-                        2 = True, ), 
                     operator = datasheets_openapi_client.models.benefit3_fields.Benefit3Fields(
                         1 = True, 
                         2 = True, 
@@ -48,7 +45,9 @@ class TestContext(unittest.TestCase):
                     production = datasheets_openapi_client.models.benefit2_fields.Benefit2Fields(
                         1 = True, 
                         2 = True, ), 
-                    quality = , 
+                    quality = datasheets_openapi_client.models.benefit2_fields.Benefit2Fields(
+                        1 = True, 
+                        2 = True, ), 
                     machine = , ),
                 category = datasheets_openapi_client.models.category.Category(
                     decisionmaker = True, 
@@ -80,9 +79,6 @@ class TestContext(unittest.TestCase):
         else:
             return Context(
                 benefits = datasheets_openapi_client.models.benefits.Benefits(
-                    macmuhine = datasheets_openapi_client.models.benefit2_fields.Benefit2Fields(
-                        1 = True, 
-                        2 = True, ), 
                     operator = datasheets_openapi_client.models.benefit3_fields.Benefit3Fields(
                         1 = True, 
                         2 = True, 
@@ -90,7 +86,9 @@ class TestContext(unittest.TestCase):
                     production = datasheets_openapi_client.models.benefit2_fields.Benefit2Fields(
                         1 = True, 
                         2 = True, ), 
-                    quality = , 
+                    quality = datasheets_openapi_client.models.benefit2_fields.Benefit2Fields(
+                        1 = True, 
+                        2 = True, ), 
                     machine = , ),
                 category = datasheets_openapi_client.models.category.Category(
                     decisionmaker = True, 

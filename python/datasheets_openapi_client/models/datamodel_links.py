@@ -19,15 +19,16 @@ import re  # noqa: F401
 import json
 
 
+from typing import Optional
+from pydantic import BaseModel, StrictStr
 
-from pydantic import BaseModel, Field, StrictBool
-
-class MultienancySupport(BaseModel):
+class DatamodelLinks(BaseModel):
     """
-    MultienancySupport
+    DatamodelLinks
     """
-    checkbox: StrictBool = Field(...)
-    __properties = ["checkbox"]
+    input: Optional[StrictStr] = None
+    output: Optional[StrictStr] = None
+    __properties = ["input", "output"]
 
     class Config:
         """Pydantic configuration"""
@@ -43,8 +44,8 @@ class MultienancySupport(BaseModel):
         return json.dumps(self.to_dict())
 
     @classmethod
-    def from_json(cls, json_str: str) -> MultienancySupport:
-        """Create an instance of MultienancySupport from a JSON string"""
+    def from_json(cls, json_str: str) -> DatamodelLinks:
+        """Create an instance of DatamodelLinks from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
     def to_dict(self):
@@ -56,21 +57,22 @@ class MultienancySupport(BaseModel):
         return _dict
 
     @classmethod
-    def from_dict(cls, obj: dict) -> MultienancySupport:
-        """Create an instance of MultienancySupport from a dict"""
+    def from_dict(cls, obj: dict) -> DatamodelLinks:
+        """Create an instance of DatamodelLinks from a dict"""
         if obj is None:
             return None
 
         if not isinstance(obj, dict):
-            return MultienancySupport.parse_obj(obj)
+            return DatamodelLinks.parse_obj(obj)
 
         # raise errors for additional fields in the input
         for _key in obj.keys():
             if _key not in cls.__properties:
-                raise ValueError("Error due to additional fields (not defined in MultienancySupport) in the input: " + obj)
+                raise ValueError("Error due to additional fields (not defined in DatamodelLinks) in the input: " + obj)
 
-        _obj = MultienancySupport.parse_obj({
-            "checkbox": obj.get("checkbox")
+        _obj = DatamodelLinks.parse_obj({
+            "input": obj.get("input"),
+            "output": obj.get("output")
         })
         return _obj
 

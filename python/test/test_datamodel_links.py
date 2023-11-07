@@ -16,10 +16,10 @@
 import unittest
 import datetime
 
-from datasheets_openapi_client.models.multiuser_support import MultiuserSupport  # noqa: E501
+from datasheets_openapi_client.models.datamodel_links import DatamodelLinks  # noqa: E501
 
-class TestMultiuserSupport(unittest.TestCase):
-    """MultiuserSupport unit test stubs"""
+class TestDatamodelLinks(unittest.TestCase):
+    """DatamodelLinks unit test stubs"""
 
     def setUp(self):
         pass
@@ -27,26 +27,26 @@ class TestMultiuserSupport(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> MultiuserSupport:
-        """Test MultiuserSupport
+    def make_instance(self, include_optional) -> DatamodelLinks:
+        """Test DatamodelLinks
             include_option is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
-        # uncomment below to create an instance of `MultiuserSupport`
+        # uncomment below to create an instance of `DatamodelLinks`
         """
-        model = MultiuserSupport()  # noqa: E501
+        model = DatamodelLinks()  # noqa: E501
         if include_optional:
-            return MultiuserSupport(
-                checkbox = True
+            return DatamodelLinks(
+                input = '',
+                output = ''
             )
         else:
-            return MultiuserSupport(
-                checkbox = True,
+            return DatamodelLinks(
         )
         """
 
-    def testMultiuserSupport(self):
-        """Test MultiuserSupport"""
+    def testDatamodelLinks(self):
+        """Test DatamodelLinks"""
         # inst_req_only = self.make_instance(include_optional=False)
         # inst_req_and_optional = self.make_instance(include_optional=True)
 

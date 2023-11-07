@@ -39,9 +39,9 @@ class TestTechnicalRequirements(unittest.TestCase):
             return TechnicalRequirements(
                 disk_unit = '',
                 gpu_unit = '',
-                multienancy_support = datasheets_openapi_client.models.multienancy_support.MultienancySupport(
+                multienancy_support = datasheets_openapi_client.models.requirement_support.RequirementSupport(
                     checkbox = True, ),
-                multiuser_support = datasheets_openapi_client.models.multiuser_support.MultiuserSupport(
+                multiuser_support = datasheets_openapi_client.models.requirement_support.RequirementSupport(
                     checkbox = True, ),
                 ram_unit = '',
                 dashboard = '',
@@ -61,9 +61,9 @@ class TestTechnicalRequirements(unittest.TestCase):
             return TechnicalRequirements(
                 disk_unit = '',
                 gpu_unit = '',
-                multienancy_support = datasheets_openapi_client.models.multienancy_support.MultienancySupport(
+                multienancy_support = datasheets_openapi_client.models.requirement_support.RequirementSupport(
                     checkbox = True, ),
-                multiuser_support = datasheets_openapi_client.models.multiuser_support.MultiuserSupport(
+                multiuser_support = datasheets_openapi_client.models.requirement_support.RequirementSupport(
                     checkbox = True, ),
                 ram_unit = '',
         )

@@ -4,7 +4,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**datamodel_links** | **Dict[str, object]** |  | 
+**datamodel_links** | [**DatamodelLinks**](DatamodelLinks.md) |  | 
 **input** | [**DataModels**](DataModels.md) |  | 
 **output** | [**DataModels**](DataModels.md) |  | 
 

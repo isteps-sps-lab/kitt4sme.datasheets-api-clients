@@ -19,15 +19,16 @@ import re  # noqa: F401
 import json
 
 
-from typing import Any, Dict
+
 from pydantic import BaseModel, Field
 from datasheets_openapi_client.models.data_models import DataModels
+from datasheets_openapi_client.models.datamodel_links import DatamodelLinks
 
 class DataModel(BaseModel):
     """
     DataModel
     """
-    datamodel_links: Dict[str, Dict[str, Any]] = Field(...)
+    datamodel_links: DatamodelLinks = Field(...)
     input: DataModels = Field(...)
     output: DataModels = Field(...)
     __properties = ["datamodel_links", "input", "output"]
@@ -56,6 +57,9 @@ class DataModel(BaseModel):
                           exclude={
                           },
                           exclude_none=True)
+        # override the default output from pydantic by calling `to_dict()` of datamodel_links
+        if self.datamodel_links:
+            _dict['datamodel_links'] = self.datamodel_links.to_dict()
         # override the default output from pydantic by calling `to_dict()` of input
         if self.input:
             _dict['input'] = self.input.to_dict()
@@ -79,7 +83,7 @@ class DataModel(BaseModel):
                 raise ValueError("Error due to additional fields (not defined in DataModel) in the input: " + obj)
 
         _obj = DataModel.parse_obj({
-            "datamodel_links": obj.get("datamodel_links"),
+            "datamodel_links": DatamodelLinks.from_dict(obj.get("datamodel_links")) if obj.get("datamodel_links") is not None else None,
             "input": DataModels.from_dict(obj.get("input")) if obj.get("input") is not None else None,
             "output": DataModels.from_dict(obj.get("output")) if obj.get("output") is not None else None
         })

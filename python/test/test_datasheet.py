@@ -39,9 +39,6 @@ class TestDatasheet(unittest.TestCase):
             return Datasheet(
                 context = datasheets_openapi_client.models.context.Context(
                     benefits = datasheets_openapi_client.models.benefits.Benefits(
-                        macmuhine = datasheets_openapi_client.models.benefit2_fields.Benefit2Fields(
-                            1 = True, 
-                            2 = True, ), 
                         operator = datasheets_openapi_client.models.benefit3_fields.Benefit3Fields(
                             1 = True, 
                             2 = True, 
@@ -49,7 +46,9 @@ class TestDatasheet(unittest.TestCase):
                         production = datasheets_openapi_client.models.benefit2_fields.Benefit2Fields(
                             1 = True, 
                             2 = True, ), 
-                        quality = , 
+                        quality = datasheets_openapi_client.models.benefit2_fields.Benefit2Fields(
+                            1 = True, 
+                            2 = True, ), 
                         machine = , ), 
                     category = datasheets_openapi_client.models.category.Category(
                         decisionmaker = True, 
@@ -72,9 +71,9 @@ class TestDatasheet(unittest.TestCase):
                         ''
                         ], ),
                 datamodel = datasheets_openapi_client.models.data_model.DataModel(
-                    datamodel_links = {
-                        'key' : None
-                        }, 
+                    datamodel_links = datasheets_openapi_client.models.datamodel_links.DatamodelLinks(
+                        input = '', 
+                        output = '', ), 
                     input = datasheets_openapi_client.models.data_models.DataModels(
                         devices = [
                             ''
@@ -138,9 +137,9 @@ class TestDatasheet(unittest.TestCase):
                 technicalrequirements = datasheets_openapi_client.models.technical_requirements.TechnicalRequirements(
                     disk_unit = '', 
                     gpu_unit = '', 
-                    multienancy_support = datasheets_openapi_client.models.multienancy_support.MultienancySupport(
+                    multienancy_support = datasheets_openapi_client.models.requirement_support.RequirementSupport(
                         checkbox = True, ), 
-                    multiuser_support = datasheets_openapi_client.models.multiuser_support.MultiuserSupport(
+                    multiuser_support = datasheets_openapi_client.models.requirement_support.RequirementSupport(
                         checkbox = True, ), 
                     ram_unit = '', 
                     dashboard = '', 
@@ -175,9 +174,6 @@ class TestDatasheet(unittest.TestCase):
             return Datasheet(
                 context = datasheets_openapi_client.models.context.Context(
                     benefits = datasheets_openapi_client.models.benefits.Benefits(
-                        macmuhine = datasheets_openapi_client.models.benefit2_fields.Benefit2Fields(
-                            1 = True, 
-                            2 = True, ), 
                         operator = datasheets_openapi_client.models.benefit3_fields.Benefit3Fields(
                             1 = True, 
                             2 = True, 
@@ -185,7 +181,9 @@ class TestDatasheet(unittest.TestCase):
                         production = datasheets_openapi_client.models.benefit2_fields.Benefit2Fields(
                             1 = True, 
                             2 = True, ), 
-                        quality = , 
+                        quality = datasheets_openapi_client.models.benefit2_fields.Benefit2Fields(
+                            1 = True, 
+                            2 = True, ), 
                         machine = , ), 
                     category = datasheets_openapi_client.models.category.Category(
                         decisionmaker = True, 
@@ -208,9 +206,9 @@ class TestDatasheet(unittest.TestCase):
                         ''
                         ], ),
                 datamodel = datasheets_openapi_client.models.data_model.DataModel(
-                    datamodel_links = {
-                        'key' : None
-                        }, 
+                    datamodel_links = datasheets_openapi_client.models.datamodel_links.DatamodelLinks(
+                        input = '', 
+                        output = '', ), 
                     input = datasheets_openapi_client.models.data_models.DataModels(
                         devices = [
                             ''
@@ -274,9 +272,9 @@ class TestDatasheet(unittest.TestCase):
                 technicalrequirements = datasheets_openapi_client.models.technical_requirements.TechnicalRequirements(
                     disk_unit = '', 
                     gpu_unit = '', 
-                    multienancy_support = datasheets_openapi_client.models.multienancy_support.MultienancySupport(
+                    multienancy_support = datasheets_openapi_client.models.requirement_support.RequirementSupport(
                         checkbox = True, ), 
-                    multiuser_support = datasheets_openapi_client.models.multiuser_support.MultiuserSupport(
+                    multiuser_support = datasheets_openapi_client.models.requirement_support.RequirementSupport(
                         checkbox = True, ), 
                     ram_unit = '', 
                     dashboard = '', 

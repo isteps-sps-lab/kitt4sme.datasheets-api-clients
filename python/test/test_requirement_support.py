@@ -16,10 +16,10 @@
 import unittest
 import datetime
 
-from datasheets_openapi_client.models.multienancy_support import MultienancySupport  # noqa: E501
+from datasheets_openapi_client.models.requirement_support import RequirementSupport  # noqa: E501
 
-class TestMultienancySupport(unittest.TestCase):
-    """MultienancySupport unit test stubs"""
+class TestRequirementSupport(unittest.TestCase):
+    """RequirementSupport unit test stubs"""
 
     def setUp(self):
         pass
@@ -27,26 +27,26 @@ class TestMultienancySupport(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> MultienancySupport:
-        """Test MultienancySupport
+    def make_instance(self, include_optional) -> RequirementSupport:
+        """Test RequirementSupport
             include_option is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
-        # uncomment below to create an instance of `MultienancySupport`
+        # uncomment below to create an instance of `RequirementSupport`
         """
-        model = MultienancySupport()  # noqa: E501
+        model = RequirementSupport()  # noqa: E501
         if include_optional:
-            return MultienancySupport(
+            return RequirementSupport(
                 checkbox = True
             )
         else:
-            return MultienancySupport(
+            return RequirementSupport(
                 checkbox = True,
         )
         """
 
-    def testMultienancySupport(self):
-        """Test MultienancySupport"""
+    def testRequirementSupport(self):
+        """Test RequirementSupport"""
         # inst_req_only = self.make_instance(include_optional=False)
         # inst_req_and_optional = self.make_instance(include_optional=True)
 

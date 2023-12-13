@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "datasheets_openapi_client"
-version = "0.5.0"
+version = "1.0.0"
 description = "Datasheets Backend"
 authors = ["OpenAPI Generator Community <kari.kolehmainen@vtt.fi>"]
 license = "Apache 2.0"

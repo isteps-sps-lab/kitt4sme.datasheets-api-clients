@@ -5,7 +5,7 @@ packageName: datasheets_openapi_client
 projectName: datasheets-openapi-client
 
 # Description: python package version.
-packageVersion: 0.5.0
+packageVersion: 1.0.0
 
 # Description: python package URL.
 # packageUrl: 

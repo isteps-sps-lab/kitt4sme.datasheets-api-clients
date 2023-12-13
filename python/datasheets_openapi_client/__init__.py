@@ -15,7 +15,7 @@
 """  # noqa: E501
 
 
-__version__ = "0.5.0"
+__version__ = "1.0.0"
 
 # import apis into sdk package
 from datasheets_openapi_client.api.datasheets_api import DatasheetsApi

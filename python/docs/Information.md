@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **component_name** | **str** |  | 
 **component_uuid** | **str** |  | 
 **provider** | **str** |  | 
-**version** | **str** |  | 
+**version** | **str** |  | [optional] 
 
 ## Example
 

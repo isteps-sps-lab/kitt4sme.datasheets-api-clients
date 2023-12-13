@@ -49,7 +49,6 @@ class TestInformation(unittest.TestCase):
                 component_name = '',
                 component_uuid = '',
                 provider = '',
-                version = '',
         )
         """
 

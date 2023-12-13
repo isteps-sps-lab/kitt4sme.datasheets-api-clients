@@ -272,7 +272,6 @@ components:
         - component_name
         - component_uuid
         - provider
-        - version
       properties:
         component_accronym: 
           type: string

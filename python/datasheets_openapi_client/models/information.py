@@ -19,7 +19,7 @@ import re  # noqa: F401
 import json
 
 
-
+from typing import Optional
 from pydantic import BaseModel, Field, StrictStr
 
 class Information(BaseModel):
@@ -30,7 +30,7 @@ class Information(BaseModel):
     component_name: StrictStr = Field(...)
     component_uuid: StrictStr = Field(...)
     provider: StrictStr = Field(...)
-    version: StrictStr = Field(...)
+    version: Optional[StrictStr] = None
     __properties = ["component_accronym", "component_name", "component_uuid", "provider", "version"]
 
     class Config:

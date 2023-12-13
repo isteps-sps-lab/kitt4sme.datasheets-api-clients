@@ -37,7 +37,8 @@ class TestPublicEndpoints(unittest.TestCase):
         model = PublicEndpoints()  # noqa: E501
         if include_optional:
             return PublicEndpoints(
-                oapi = True
+                oapi = True,
+                oapijson = ''
             )
         else:
             return PublicEndpoints(

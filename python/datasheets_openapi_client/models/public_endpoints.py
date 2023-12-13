@@ -20,14 +20,15 @@ import json
 
 
 from typing import Optional
-from pydantic import BaseModel, StrictBool
+from pydantic import BaseModel, StrictBool, StrictStr
 
 class PublicEndpoints(BaseModel):
     """
     PublicEndpoints
     """
     oapi: Optional[StrictBool] = None
-    __properties = ["oapi"]
+    oapijson: Optional[StrictStr] = None
+    __properties = ["oapi", "oapijson"]
 
     class Config:
         """Pydantic configuration"""
@@ -70,7 +71,8 @@ class PublicEndpoints(BaseModel):
                 raise ValueError("Error due to additional fields (not defined in PublicEndpoints) in the input: " + obj)
 
         _obj = PublicEndpoints.parse_obj({
-            "oapi": obj.get("oapi")
+            "oapi": obj.get("oapi"),
+            "oapijson": obj.get("oapijson")
         })
         return _obj
 

@@ -5,6 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **oapi** | **bool** |  | [optional] 
+**oapijson** | **str** |  | [optional] 
 
 ## Example
 

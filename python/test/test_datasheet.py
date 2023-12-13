@@ -113,7 +113,8 @@ class TestDatasheet(unittest.TestCase):
                         
                         ], ),
                 public_endpoints = datasheets_openapi_client.models.public_endpoints.PublicEndpoints(
-                    oapi = True, ),
+                    oapi = True, 
+                    oapijson = '', ),
                 skills = datasheets_openapi_client.models.skills.Skills(
                     basic = datasheets_openapi_client.models.basic.Basic(
                         process = [
@@ -248,7 +249,8 @@ class TestDatasheet(unittest.TestCase):
                         
                         ], ),
                 public_endpoints = datasheets_openapi_client.models.public_endpoints.PublicEndpoints(
-                    oapi = True, ),
+                    oapi = True, 
+                    oapijson = '', ),
                 skills = datasheets_openapi_client.models.skills.Skills(
                     basic = datasheets_openapi_client.models.basic.Basic(
                         process = [

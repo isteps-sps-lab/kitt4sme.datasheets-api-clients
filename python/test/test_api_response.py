@@ -99,7 +99,8 @@ class TestApiResponse(unittest.TestCase):
                         keycloak_id = '', 
                         module_properties = datasheets_openapi_client.models.module_properties.ModuleProperties(), 
                         public_endpoints = datasheets_openapi_client.models.public_endpoints.PublicEndpoints(
-                            oapi = True, ), 
+                            oapi = True, 
+                            oapijson = '', ), 
                         skills = datasheets_openapi_client.models.skills.Skills(
                             basic = datasheets_openapi_client.models.basic.Basic(
                                 process = [
@@ -223,7 +224,8 @@ class TestApiResponse(unittest.TestCase):
                         keycloak_id = '', 
                         module_properties = datasheets_openapi_client.models.module_properties.ModuleProperties(), 
                         public_endpoints = datasheets_openapi_client.models.public_endpoints.PublicEndpoints(
-                            oapi = True, ), 
+                            oapi = True, 
+                            oapijson = '', ), 
                         skills = datasheets_openapi_client.models.skills.Skills(
                             basic = datasheets_openapi_client.models.basic.Basic(
                                 process = [

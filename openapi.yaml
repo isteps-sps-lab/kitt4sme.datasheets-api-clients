@@ -234,6 +234,8 @@ components:
       properties:
         oapi:
           type: boolean
+        oapijson: 
+          type: string
     ModuleProperties:
       type: object
       properties:
